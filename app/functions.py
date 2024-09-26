@@ -1,6 +1,10 @@
 import json
 import os
+import subprocess
+import time
+import typer
 
+from colorama import Back, Fore, Style
 from openai import OpenAI
 
 from app.character import Character
@@ -59,3 +63,34 @@ def show_chat_history():
                 print('\n')
                 print(dt)
                 print('________')
+
+
+def run_tests():
+    print(Back.YELLOW + Fore.BLACK + Style.BRIGHT + 'RUN TESTS')
+    print(Style.RESET_ALL)
+    subprocess.run(['pytest', '-s'])
+    input(Back.YELLOW + Fore.BLACK + Style.BRIGHT +  'Print enter to start' + Style.RESET_ALL)
+    clear_terminal()
+
+def create_test_n_style(text: str):
+    print('\n')
+    print(Back.LIGHTBLACK_EX + Fore.LIGHTYELLOW_EX + Style.BRIGHT + text)
+    print(Style.RESET_ALL)
+
+def print_app_title():
+    print(Back.BLACK + Fore.LIGHTYELLOW_EX + Style.BRIGHT + 'Joker_Batman_AI app')
+    print(Style.RESET_ALL)
+    time.sleep(3)
+
+def print_start_chat_msg():
+    print(Back.BLACK + Fore.LIGHTMAGENTA_EX + Style.BRIGHT + 'Ask something yourself')
+    print(Style.RESET_ALL)
+
+def choice_run_tests():
+    choice = typer.confirm("Do you want to run tests?")
+    if choice:
+        typer.echo("Вы выбрали 'Да'")
+        return True
+    else:
+        typer.echo("Вы выбрали 'Нет'")
+        return False

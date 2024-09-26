@@ -13,9 +13,6 @@ BATMAN = "Batman"
 DATA_BASE_DIR = os.path.join(ROOT_DIR, 'data_base')
 DATA_BASE_JSON = os.path.join(DATA_BASE_DIR, 'chat_history.json')
 
-print(os.path.exists(DATA_BASE_JSON))
-
-
 if not os.path.exists(DATA_BASE_DIR):
     os.mkdir(DATA_BASE_DIR)
 

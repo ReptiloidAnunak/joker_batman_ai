@@ -1,3 +1,5 @@
-openai
 python-dotenv
 pytest
+colorama==0.4.6
+typer
+openai

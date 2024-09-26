@@ -1,8 +1,11 @@
 from datetime import datetime
 
-from functions import get_character_for_answer, save_answer_question, clear_terminal, show_chat_history
+from colorama import Back, Fore, Style
+
+from app.functions import get_character_for_answer, save_answer_question, clear_terminal, show_chat_history
 
 def answer_user_question(client):
+    clear_terminal()
     while True:
         show_chat_history()
         usr_char_msg_dict = {}
@@ -17,9 +20,7 @@ def answer_user_question(client):
         print(response_str)
         time = datetime.now()
         time_str = time.strftime('%H:%M:%S  %d.%m.%Y')
-        # print(time_str)
 
         usr_char_msg_dict[time_str] = tuple([user_question, response_str])
-        # print(history_dict)
         save_answer_question(usr_char_msg_dict)
         clear_terminal()
