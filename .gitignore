@@ -1,0 +1,5 @@
+
+.env
+.idea
+.venv
+data_base/chat_history.json
