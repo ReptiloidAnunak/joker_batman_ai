@@ -1,12 +1,8 @@
-import json
-import os
-from datetime import datetime
+
 from openai import OpenAI
-
-from answer_user_question import answer_user_question
-from settings import API_KEY, JOKER, BATMAN, DATA_BASE_JSON
-from character import Character
-
+import subprocess
+from app.answer_user_question import answer_user_question
+from settings import API_KEY
 
 def run_app():
     client = OpenAI(api_key=API_KEY)

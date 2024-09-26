@@ -2,7 +2,7 @@ from openai import OpenAI
 
 
 class Character:
-    def __init__(self, client: OpenAI, name: str):
+    def __init__(self, client: OpenAI, name: str) -> str:
         self.name = name
         self.gpt_role_instruction = self._create_character_instruction_for_gpt()
         self.client = client

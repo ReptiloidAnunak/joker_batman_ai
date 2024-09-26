@@ -2,7 +2,6 @@ from datetime import datetime
 
 from functions import get_character_for_answer, save_answer_question, clear_terminal, show_chat_history
 
-
 def answer_user_question(client):
     while True:
         show_chat_history()

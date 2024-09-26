@@ -3,7 +3,7 @@ import os
 
 from openai import OpenAI
 
-from character import Character
+from app.character import Character
 from settings import JOKER, BATMAN, DATA_BASE_JSON
 
 
