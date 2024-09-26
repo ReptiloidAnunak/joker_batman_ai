@@ -2,7 +2,7 @@
 https://github.com
 ### **Описание**
 
-GPT-чат, определяющий тональность сообщения пользователя.<br>
+Англоязычный GPT-чат, определяющий тональность сообщения пользователя.<br>
 Если пользователь отправляет позитивное или нейтральное сообщение, ему отвечает Бэтман, если негативное - Джокер.<br>
 В конце сообщения ИИ задает пользователю вопрос в контексте его сообщения.
 Каждый раз история чата сохраняется и обновляется на экране терминала.
@@ -31,6 +31,7 @@ Windows (PowerShell): `.venv\Scripts\Activate.ps1`<br>
 **Запуск с помощью Docker**
 
 Если на вашем компьютере не установлен Docker, скачайте его по инструкции на [официальном сайте](https://www.docker.com/get-started/)
-
-1. Убедитесь, что вы находитесь в корневой директории, где расположен [Dockerfile](Dockerfile)<br>Запустите команду сбора докер-контейнера `docker build -t joker_batman_ai .`
-2. Запустите докер-контейнер<br>`docker run --restart unless-stopped -d --name joker_batman_ai_container joker_batman_ai && docker logs -f joker_batman_ai_container`
+1. Скачайте или кронируйте папку проекта (git clone https://github.com/ReptiloidAnunak/joker_batman_ai)
+2. Добавьте файл .env c вашим ключом OpenAI API в виде API_KEY='ВАШКЛЮЧ'
+3. Убедитесь, что вы находитесь в корневой директории, где расположен [Dockerfile](Dockerfile)<br>Запустите команду сбора докер-контейнера `docker build -t joker_batman_ai .`
+4. Запустите докер-контейнер<br>`docker run -it joker_batman_ai`
